@@ -1,6 +1,10 @@
 {% extends 'concertconnect/base.html' %}
 {% load staticfiles %} 
 
+{% block head_block %}
+<link rel="stylesheet" type="text/css"  href="static/CSS/style"/>
+
+{% endblock %}
 {% block title_block %}
         Homepage 
 {% endblock %}
@@ -10,7 +14,7 @@
     
     <div>
        {% if user.is_authenticated %}
-        Welcome <i style=" color:blueviolet"><b>{{ user.username }}!</b></i>
+        Welcome <b class="blue">{{ user.username }}!</b>
         {% else %}
 <!--        Follow wireframe -->
         {% endif %}
