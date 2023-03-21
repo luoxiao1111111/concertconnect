@@ -15,8 +15,8 @@
     <div>
        {% if user.is_authenticated %}
         Welcome <b class="blue">{{ user.username }}!</b>
-        {% else %}
-<!--        Follow wireframe -->
+        {% elif user.is_superuser %}
+         Welcome <b class="red">{{ user.username }}!</b>
         {% endif %}
         <br/>
         <br/>
@@ -27,7 +27,7 @@
     
     
     <div>
-        <h2>Most Liked Categories</h2>
+        <h2>Most Liked Venues</h2>
     {% if categories %}
      <ul>
         {% for category in categories %}
@@ -35,7 +35,7 @@
         {% endfor %}
      </ul>
     {% else %}
-            <strong>There are no categories present.</strong>
+            <strong>There are no Venues present.</strong>
     {% endif %}
     </div>
     
@@ -43,7 +43,7 @@
     <br><br/>
     
     <div>
-        <h2>Most Viewed Pages</h2>
+        <h2>Most Viewed Concerts</h2>
         {% if pages %}
         <ul>
             {% for page in pages %}
@@ -51,7 +51,7 @@
             {% endfor %}
         </ul>
         {% else %}
-            <strong>There are no pages present.</strong>
+            <strong>There are no concertspresent.</strong>
         {% endif %}
     </div>
     
